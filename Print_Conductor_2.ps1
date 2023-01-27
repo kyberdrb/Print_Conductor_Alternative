@@ -15,7 +15,6 @@ Get-ChildItem "${AdresarSoSubormiNaTlac}" -Filter "*.pdf" | Sort | ForEach-Objec
     $FullPathToPDFdoc=$_.FullName
     echo "$FullPathToPDFdoc"
 
-    #Start-Process -FilePath "${ScriptDir}\utils\PDFtoPrinter.exe" -ArgumentList """$FullPathToPDFdoc""","""EPSON M2170 Series""" -Wait
     Start-Process -FilePath "${ScriptDir}\utils\PDFtoPrinter.exe" -ArgumentList """$FullPathToPDFdoc""","""${PrinterName}""" -Wait
 }
 
