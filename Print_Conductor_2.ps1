@@ -9,7 +9,7 @@ explorer "${AdresarSoSubormiNaTlac}"
 Write-Host "Stlac lubovolnu klavesu pre tlac dokumentov. Pre ukoncenie staci zatvorit okno.";
 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
 
-$PrinterName = "$args[0]"
+$PrinterName = $args[0]
 
 Get-ChildItem "${AdresarSoSubormiNaTlac}" -Filter "*.pdf" | Sort | ForEach-Object {
     $FullPathToPDFdoc=$_.FullName
